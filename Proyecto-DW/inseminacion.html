@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <link rel="stylesheet" href="variables.css">
+    <link rel="stylesheet" href="reset-tipografia.css">
+    <link rel="stylesheet" href="modulos.css">
+    <meta charset="UTF-8">
+    <title>Plataforma Ganadera Austral - Inseminación</title>
+    <script src="auth-guard-admin.js"></script>
+</head>
+
+<body>
+
+
+    <img src="logo.png" alt="Logo GA" class="logo-ga">
+
+
+    <nav>
+        <a href="veraneada.html">Veraneada</a> |
+        <a href="yerra.html">Yerra</a> |
+        <a href="inseminacion.html">Inseminación</a> |
+        <a href="inspeccion.html">Inspección</a> |
+        <a href="alerta.html">Alerta</a> |
+        <a href="informes.html">Informes</a>
+        <div class="nav-usuario" id="nav-usuario"></div>
+    </nav>
+    <script src="nav-usuario.js"></script>
+
+    <h2>Inseminación</h2>
+
+    <form id="inseminacion-form">
+
+        <label for="fecha">Fecha</label><br>
+        <input type="date" id="fecha" name="fecha" required><br><br>
+
+        <label for="puesto">Puesto</label><br>
+        <input type="text" id="puesto" name="puesto" required><br><br>
+
+        <label for="cravana">Cravana</label><br>
+        <input type="text" id="cravana" name="cravana" placeholder="ej: PC 145" required><br><br>
+
+        <label for="marca-hereford">Marca Hereford</label><br>
+        <select id="marca-hereford" name="marca-hereford" required>
+            <option value="">Seleccionar</option>
+            <option value="VIP">VIP</option>
+            <option value="PR">PR</option>
+            <option value="PP">PP</option>
+            <option value="S">S</option>
+        </select><br><br>
+
+        <label for="toro">Toro / semen utilizado</label><br>
+        <input type="text" id="toro" name="toro" required><br><br>
+
+        <fieldset>
+            <legend>Técnica</legend>
+            <input type="radio" id="tecnica-convencional" name="tecnica" value="Convencional">
+            <label for="tecnica-convencional">IA convencional</label>
+
+            <input type="radio" id="tecnica-iatf" name="tecnica" value="IATF">
+            <label for="tecnica-iatf">IATF</label>
+        </fieldset>
+        <br>
+
+        <label for="observaciones">Observaciones</label><br>
+        <textarea id="observaciones" name="observaciones" rows="3"></textarea><br><br>
+
+        <button type="submit" class="btn-primario">Registrar inseminación</button>
+    </form>
+    <script src="inseminacion.js"></script>
+</body>
+
+</html>

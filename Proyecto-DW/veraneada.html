@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <link rel="stylesheet" href="variables.css">
+    <link rel="stylesheet" href="reset-tipografia.css">
+    <link rel="stylesheet" href="modulos.css">
+    <meta charset="UTF-8">
+    <title>Plataforma Ganadera Austral - Veraneada</title>
+    <script src="auth-guard-admin.js"></script>
+</head>
+
+<body>
+
+    <img src="logo.png" alt="Logo GA" class="logo-ga">
+
+    <nav>
+        <a href="veraneada.html">Veraneada</a> |
+        <a href="yerra.html">Yerra</a> |
+        <a href="inseminacion.html">Inseminación</a> |
+        <a href="inspeccion.html">Inspección</a> |
+        <a href="alerta.html">Alerta</a> |
+        <a href="contactos.html">Contactos</a> |
+        <a href="informes.html">Informes</a>
+        <div class="nav-usuario" id="nav-usuario"></div>
+    </nav>
+    <script src="nav-usuario.js"></script>
+
+    <h2>Veraneada</h2>
+
+    <form id="veraneada-form">
+
+        <label for="fecha">Fecha</label><br>
+        <input type="date" id="fecha" name="fecha" required><br><br>
+
+        <label for="puesto-origen">Puesto de origen</label><br>
+        <input type="text" id="puesto-origen" name="puesto-origen" required><br><br>
+
+        <label for="puesto-destino">Puesto de destino</label><br>
+        <input type="text" id="puesto-destino" name="puesto-destino" required><br><br>
+
+        <label for="caravana-codigo">Caravanas (código)</label><br>
+        <input type="text" id="caravana-codigo" name="caravana-codigo" placeholder="ej: PC">
+
+        <label for="caravana-total">Total</label><br>
+        <input type="number" id="caravana-total" name="caravana-total" min="0"><br><br>
+
+        <label for="machos">Machos</label><br>
+        <input type="number" id="machos" name="machos" min="0">
+
+        <label for="hembras">Hembras</label><br>
+        <input type="number" id="hembras" name="hembras" min="0">
+
+        <label for="novillos">Novillos</label><br>
+        <input type="number" id="novillos" name="novillos" min="0"><br><br>
+
+        <fieldset>
+            <legend>Marca Hereford</legend>
+
+            <label for="mh-vip">VIP</label><br>
+            <input type="number" id="mh-vip" name="mh-vip" min="0"><br><br>
+
+            <label for="mh-pr">PR</label><br>
+            <input type="number" id="mh-pr" name="mh-pr" min="0"><br><br>
+
+            <label for="mh-pp">PP</label><br>
+            <input type="number" id="mh-pp" name="mh-pp" min="0"><br><br>
+
+            <label for="mh-s">S</label><br>
+            <input type="number" id="mh-s" name="mh-s" min="0">
+        </fieldset>
+        <br>
+
+        <label for="observaciones">Observaciones</label><br>
+        <textarea id="observaciones" name="observaciones" rows="3"></textarea><br><br>
+
+        <button type="submit" class="btn-primario">Registrar veraneada</button>
+
+    </form>
+    <script src="veraneada.js"></script>
+
+</body>
+
+</html>

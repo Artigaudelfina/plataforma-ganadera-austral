@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <link rel="stylesheet" href="variables.css">
+    <link rel="stylesheet" href="reset-tipografia.css">
+    <link rel="stylesheet" href="modulos.css">
+    <meta charset="UTF-8">
+    <title>Plataforma Ganadera Austral - Inspección Hereford</title>
+    <script src="auth-guard-admin.js"></script>
+</head>
+
+<body>
+
+    <img src="logo.png" alt="Logo GA" class="logo-ga">
+
+
+    <nav>
+        <a href="veraneada.html">Veraneada</a> |
+        <a href="yerra.html">Yerra</a> |
+        <a href="inseminacion.html">Inseminación</a> |
+        <a href="inspeccion.html">Inspección</a> |
+        <a href="alerta.html">Alerta</a> |
+        <a href="informes.html">Informes</a>
+        <div class="nav-usuario" id="nav-usuario"></div>
+    </nav>
+    <script src="nav-usuario.js"></script>
+
+    <h2>Inspección Hereford</h2>
+
+    <form id="inspeccion-form">
+
+        <label for="fecha">Fecha</label><br>
+        <input type="date" id="fecha" name="fecha" required><br><br>
+
+        <label for="puesto">Puesto</label><br>
+        <input type="text" id="puesto" name="puesto" required><br><br>
+
+        <fieldset>
+            <legend>Aceptadas</legend>
+
+            <label for="mh-vip">VIP</label><br>
+            <input type="number" id="mh-vip" name="mh-vip" min="0"><br><br>
+
+            <label for="mh-pr">PR</label><br>
+            <input type="number" id="mh-pr" name="mh-pr" min="0"><br><br>
+
+            <label for="mh-pp">PP</label><br>
+            <input type="number" id="mh-pp" name="mh-pp" min="0"><br><br>
+
+            <label for="mh-s">S</label><br>
+            <input type="number" id="mh-s" name="mh-s" min="0">
+        </fieldset>
+        <br>
+
+        <fieldset>
+            <legend>Rechazadas</legend>
+
+            <label for="r-pelaje">Pelaje</label><br>
+            <input type="number" id="r-pelaje" name="r-pelaje" min="0"><br><br>
+
+            <label for="r-estructura">Estructura</label><br>
+            <input type="number" id="r-estructura" name="r-estructura" min="0"><br><br>
+
+            <label for="r-caracter">Carácter</label><br>
+            <input type="number" id="r-caracter" name="r-caracter" min="0"><br><br>
+
+            <label for="r-ojos">Ojos</label><br>
+            <input type="number" id="r-ojos" name="r-ojos" min="0"><br><br>
+
+            <label for="r-mancha">Mancha</label><br>
+            <input type="number" id="r-mancha" name="r-mancha" min="0">
+        </fieldset>
+        <br>
+
+        <label for="observaciones">Observaciones</label><br>
+        <textarea id="observaciones" name="observaciones" rows="3"></textarea><br><br>
+
+        <button type="submit" class="btn-primario">Registrar inspección</button>
+
+    </form>
+    <script src="inspeccion.js"></script>
+</body>
+
+</html>

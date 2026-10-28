@@ -1,0 +1,205 @@
+body {
+    margin: 0;
+}
+
+body>*:not(nav) {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+}
+
+body>h1 {
+    color: var(--color-marca);
+    margin-top: 1rem;
+}
+
+nav {
+    background-color: var(--pine-teal);
+    color: var(--ivory);
+    padding: 0.6rem 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 0.6rem;
+    column-gap: 1.2rem;
+    position: relative;
+}
+
+nav a {
+    color: var(--ivory);
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+#nav-usuario {
+    position: absolute;
+    top: 50%;
+    right: 1.5rem;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+}
+
+#nav-usuario .icono-persona {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: var(--ivory);
+    color: var(--pine-teal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.8rem;
+    flex-shrink: 0;
+}
+
+h2 {
+    margin-top: 1.5rem;
+}
+
+form label {
+    display: block;
+    font-size: 0.875rem;
+    margin-top: 1rem;
+    margin-bottom: 0.25rem;
+}
+
+form label+br {
+    display: none;
+}
+
+form input,
+form select,
+form textarea {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 400px;
+    padding: 0.5rem 0.65rem;
+    background-color: var(--input-bg);
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    font-family: var(--font-texto);
+    font-size: 0.9rem;
+}
+
+form input[type="radio"],
+form input[type="checkbox"] {
+    width: auto;
+    max-width: none;
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+    outline: none;
+    border-color: var(--color-primario);
+}
+
+form select {
+    -webkit-appearance: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6'><polygon points='0,0 10,0 5,6' fill='%23204633'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    padding-right: 2rem;
+}
+
+fieldset {
+    max-width: 400px;
+    margin-top: 1rem;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    padding: 0.75rem 1rem 1rem;
+}
+
+legend {
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--color-marca);
+    padding: 0 0.4rem;
+}
+
+fieldset label {
+    display: inline-block;
+    margin-top: 0;
+    margin-right: 1rem;
+    font-size: 0.85rem;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 700px;
+    margin-top: 1rem;
+}
+
+table th,
+table td {
+    border: 1px solid #cccccc;
+    padding: 0.5rem 0.65rem;
+    text-align: left;
+    font-size: 0.9rem;
+}
+
+table th {
+    background-color: var(--chip-inactivo-bg);
+}
+
+.btn-primario {
+    -webkit-appearance: none;
+    appearance: none;
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 320px;
+    margin: 2rem auto 0;
+    padding: 0.9rem;
+    background-color: var(--color-primario);
+    color: var(--ivory);
+    border: none;
+    border-radius: 4px;
+    font-family: var(--font-texto);
+    font-weight: 700;
+    font-size: 1.05rem;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn-primario:hover {
+    opacity: 0.9;
+}
+
+.btn-secundario {
+    -webkit-appearance: none;
+    appearance: none;
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0.6rem;
+    margin-top: 0.5rem;
+    max-width: 400px;
+    background-color: transparent;
+    color: var(--color-primario);
+    border: 1.5px solid var(--color-primario);
+    border-radius: 4px;
+    font-family: var(--font-texto);
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.logo-ga {
+    display: block;
+    width: 60px;
+    height: auto;
+    margin: 1rem auto 0;
+}

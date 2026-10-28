@@ -1,0 +1,52 @@
+:root {
+    --ivory: #f2f5ea;
+    --night-bordeaux: #6a101d;
+    --toasted-almond: #e8985e;
+    --olive-leaf: #4d5936;
+    --pine-teal: #204633;
+
+    --bg-general: var(--ivory);
+    --color-primario: var(--olive-leaf);
+    --color-marca: var(--pine-teal);
+
+    --alerta-ataque-dot: var(--night-bordeaux);
+    --alerta-avistamiento-dot: var(--toasted-almond);
+    --alerta-control-dot: var(--olive-leaf);
+
+    --alerta-ataque-bg: color-mix(in srgb, var(--night-bordeaux) 35%, white);
+    --alerta-avistamiento-bg: color-mix(in srgb, var(--toasted-almond) 45%, white);
+    --alerta-control-bg: color-mix(in srgb, var(--olive-leaf) 35%, white);
+
+    --chip-inactivo-bg: #ececec;
+    --input-bg: #ffffff;
+
+    --font-titulos: 'inria sans', sans-serif;
+    --font-texto: 'inria sans', sans-serif;
+
+}
+
+body {
+    font-family: var(--font-texto);
+    background-color: var(--bg-general);
+    color: #222222;
+    line-height: 1.5;
+}
+
+h1,
+h2 {
+    font-family: var(--font-titulos);
+    font-weight: 400;
+}
+
+h1 {
+    font-size: 2.25rem;
+}
+
+h2 {
+    font-size: 1.65rem;
+}
+
+.logo-ga {
+    font-family: var(--font-titulos);
+    color: var(--color-marca);
+}

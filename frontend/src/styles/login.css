@@ -1,0 +1,126 @@
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 350px;
+    text-align: center;
+    padding: 1.5rem;
+}
+
+.logo-ga {
+    width: 70px;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+.login-container h1 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+}
+
+.login-container label {
+    display: block;
+    text-align: left;
+    font-size: 0.875rem;
+    margin-top: 1rem;
+}
+
+.login-container input {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0.5rem 0.65rem;
+    background-color: var(--input-bg);
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    font-family: var(--font-texto);
+    font-size: 0.9rem;
+}
+
+.login-container input:focus {
+    outline: none;
+    border-color: var(--color-primario);
+}
+
+.btn-primario {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0.6rem;
+    margin-top: 1.5rem;
+    background-color: var(--color-primario);
+    color: var(--ivory);
+    border: none;
+    border-radius: 4px;
+    font-family: var(--font-texto);
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn-primario:hover {
+    opacity: 0.9;
+}
+
+.login-container small {
+    display: block;
+    margin-top: 1.5rem;
+    font-size: 0.85rem;
+}
+
+.btn-secundario {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0.6rem;
+    margin-top: 0.5rem;
+    background-color: transparent;
+    color: var(--color-primario);
+    border: 1.5px solid var(--color-primario);
+    border-radius: 4px;
+    font-family: var(--font-texto);
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.login-container a:not(.btn-primario):not(.btn-secundario) {
+    display: block;
+    margin-top: 1rem;
+    font-size: 0.8rem;
+    color: #444444;
+    text-decoration: none;
+}
+/* Ajustes de tamaño del login */
+
+.login-container {
+    max-width: 440px;
+    padding: 2rem;
+}
+
+.logo-ga {
+    width: 100px;
+}
+
+.login-container h1 {
+    font-size: 2.1rem;
+}
+
+.login-container input {
+    padding: 0.75rem;
+    font-size: 1rem;
+}
+
+.login-container .btn-primario,
+.login-container .btn-secundario {
+    padding: 0.85rem;
+    font-size: 1rem;
+}

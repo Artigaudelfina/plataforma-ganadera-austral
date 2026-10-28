@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <link rel="stylesheet" href="variables.css">
+    <link rel="stylesheet" href="reset-tipografia.css">
+    <link rel="stylesheet" href="modulos.css">
+    <script src="auth-guard-admin.js"></script>
+    <meta charset="UTF-8">
+    <title>Plataforma Ganadera Austral - Contactos</title>
+</head>
+
+<body>
+
+    <img src="logo.png" alt="Logo GA" class="logo-ga">
+
+    <nav>
+        <a href="veraneada.html">Veraneada</a> |
+        <a href="yerra.html">Yerra</a> |
+        <a href="inseminacion.html">Inseminación</a> |
+        <a href="inspeccion.html">Inspección</a> |
+        <a href="alerta.html">Alerta</a> |
+        <a href="informes.html">Informes</a> |
+        <a href="contactos.html">Contactos</a>
+        <div class="nav-usuario" id="nav-usuario"></div>
+    </nav>
+    <script src="nav-usuario.js"></script>
+    <h2>Contactos por puesto</h2>
+
+    <form id="contacto-form">
+
+        <label for="puesto">Puesto</label><br>
+        <input type="text" id="puesto" name="puesto" required><br><br>
+
+        <label for="nombre-contacto">Nombre del contacto</label><br>
+        <input type="text" id="nombre-contacto" name="nombre-contacto" required><br><br>
+
+        <label for="telefono">Teléfono (con código de país, ej: +5491122334455)</label><br>
+        <input type="tel" id="telefono" name="telefono" placeholder="2964622514" required><br><br>
+
+        <button type="submit" class="btn-primario">Agregar contacto</button>
+
+    </form>
+
+    <br>
+
+    <table id="contactos-tabla" border="1">
+        <thead>
+            <tr>
+                <th>Puesto</th>
+                <th>Nombre</th>
+                <th>Teléfono</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+    <script src="contactos.js"></script>
+</body>
+
+</html>

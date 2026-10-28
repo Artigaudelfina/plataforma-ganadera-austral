@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <link rel="stylesheet" href="variables.css">
+    <link rel="stylesheet" href="reset-tipografia.css">
+    <link rel="stylesheet" href="modulos.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="auth-guard-cualquiera.js"></script>
+    <meta charset="UTF-8">
+    <title>Plataforma Ganadera Austral - Alerta Express</title>
+    <style>
+        .opciones-severidad {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .opciones-severidad span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <img src="logo.png" alt="Logo GA" class="logo-ga">
+
+    <nav>
+        <div id="nav-principal">
+            <a href="alerta.html">Alerta</a>
+        </div>
+        <div class="nav-usuario" id="nav-usuario"></div>
+    </nav>
+    <script>
+        if (localStorage.getItem('rol') === 'ADMIN') {
+            document.getElementById('nav-principal').innerHTML =
+                '<a href="veraneada.html">Veraneada</a> | ' +
+                '<a href="yerra.html">Yerra</a> | ' +
+                '<a href="inseminacion.html">Inseminación</a> | ' +
+                '<a href="inspeccion.html">Inspección</a> | ' +
+                '<a href="alerta.html">Alerta</a> | ' +
+                '<a href="contactos.html">Contactos</a> | ' +
+                '<a href="informes.html">Informes</a>';
+        }
+    </script>
+    <script src="nav-usuario.js"></script>
+
+    <h2>Alerta Express</h2>
+
+    <p>Tocá en el mapa el lugar donde ocurrió (opcional).</p>
+    <div id="mapa" style="width:100%; max-width:500px; height:300px; border:1px solid black;"></div>
+
+    <br>
+
+    <form id="alerta-form">
+
+        <label for="puesto">Puesto</label><br>
+        <input type="text" id="puesto" name="puesto" required><br><br>
+
+        <fieldset>
+            <legend>Severidad</legend>
+            <input type="radio" id="sev-naranja" name="severidad" value="naranja">
+            <label for="sev-naranja">Ataque reciente</label><br>
+            <input type="radio" id="sev-amarillo" name="severidad" value="amarillo">
+            <label for="sev-amarillo">Avistamiento</label><br>
+            <input type="radio" id="sev-verde" name="severidad" value="verde">
+            <label for="sev-verde">Control</label><br>
+        </fieldset>
+        <br>
+
+        <label for="descripcion">Descripción (opcional)</label><br>
+        <textarea id="descripcion" name="descripcion" rows="3"></textarea><br><br>
+
+        <input type="hidden" id="latitud" name="latitud">
+        <input type="hidden" id="longitud" name="longitud">
+
+        <button type="submit" class="btn-primario">Enviar alerta</button>
+
+    </form>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="alerta.js"></script>
+</body>
+
+</html>

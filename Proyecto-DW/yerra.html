@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <link rel="stylesheet" href="variables.css">
+    <link rel="stylesheet" href="reset-tipografia.css">
+    <link rel="stylesheet" href="modulos.css">
+    <meta charset="UTF-8">
+    <title>Plataforma Ganadera Austral - Yerra</title>
+    <script src="auth-guard-admin.js"></script>
+</head>
+
+<body>
+
+    <h1>
+        <img src="logo.png" alt="Logo GA" class="logo-ga">
+    </h1>
+
+    <nav>
+        <a href="veraneada.html">Veraneada</a> |
+        <a href="yerra.html">Yerra</a> |
+        <a href="inseminacion.html">Inseminación</a> |
+        <a href="inspeccion.html">Inspección</a> |
+        <a href="alerta.html">Alerta</a> |
+        <a href="informes.html">Informes</a>
+        <div class="nav-usuario" id="nav-usuario"></div>
+    </nav>
+    <script src="nav-usuario.js"></script>
+
+    <h2>Yerra</h2>
+
+    <form id="yerra-form">
+
+        <label for="fecha">Fecha</label><br>
+        <input type="date" id="fecha" name="fecha" required><br><br>
+
+        <label for="marca-estancia">Marca de la estancia</label><br>
+        <input type="text" id="marca-estancia" name="marca-estancia" placeholder="ej: OU"><br><br>
+
+        <label for="cravana-codigo">Cravanas (código)</label><br>
+        <input type="text" id="cravana-codigo" name="cravana-codigo" placeholder="ej: PC">
+
+        <label for="cravana-total">Total</label><br>
+        <input type="number" id="cravana-total" name="cravana-total" min="0"><br><br>
+
+        <label for="machos">Machos</label><br>
+        <input type="number" id="machos" name="machos" min="0">
+
+        <label for="hembras">Hembras</label><br>
+        <input type="number" id="hembras" name="hembras" min="0">
+
+        <label for="novillos">Novillos</label><br>
+        <input type="number" id="novillos" name="novillos" min="0"><br><br>
+
+        <fieldset>
+            <legend>Vacunas aplicadas</legend>
+            <input type="checkbox" id="v-aftosa" name="vacunas" value="Aftosa">
+            <label for="v-aftosa">Aftosa</label>
+
+            <input type="checkbox" id="v-clostridial" name="vacunas" value="Clostridial">
+            <label for="v-clostridial">Clostridial</label>
+
+            <input type="checkbox" id="v-brucelosis" name="vacunas" value="Brucelosis">
+            <label for="v-brucelosis">Brucelosis</label>
+
+            <input type="checkbox" id="v-rabia" name="vacunas" value="Rabia">
+            <label for="v-rabia">Rabia</label>
+        </fieldset>
+        <br>
+
+        <button type="submit" class="btn-primario">Registrar yerra</button>
+    </form>
+    <script src="yerra.js"></script>
+
+</body>
+
+</html>
