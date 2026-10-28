@@ -6,6 +6,7 @@ import {
   Route,
   Navigate,
   useNavigate,
+  useLocation,
   Link
 } from 'react-router';
 
@@ -132,7 +133,132 @@ function Login() {
      Registrarse
     </Link>
 
-      <a href="#">¿Olvidó su contraseña?</a>
+      <Link to="/recuperar">¿Olvidaste tu contraseña?</Link>
+    </div>
+  );
+}
+
+// RECUPERACIÓN DE CONTRASEÑA (DEMOSTRACIÓN LOCAL)
+function RecuperacionPassword() {
+  const location = useLocation();
+  const esRestablecer = location.pathname === '/restablecer';
+  const token = new URLSearchParams(location.search).get('token');
+
+  const [usuario, setUsuario] = useState('');
+  const [nuevaPassword, setNuevaPassword] = useState('');
+  const [confirmarPassword, setConfirmarPassword] = useState('');
+  const [mensaje, setMensaje] = useState('');
+  const [error, setError] = useState('');
+  const [cargando, setCargando] = useState(false);
+
+  async function enviar(e) {
+    e.preventDefault();
+    setError('');
+    setMensaje('');
+
+    if (esRestablecer && !token) {
+      setError('Falta el enlace de recuperación. Solicitá uno nuevo.');
+      return;
+    }
+
+    if (esRestablecer && nuevaPassword !== confirmarPassword) {
+      setError('Las contraseñas no coinciden.');
+      return;
+    }
+
+    setCargando(true);
+
+    try {
+      const response = await fetch(
+        esRestablecer ? '/api/auth/restablecer' : '/api/auth/recuperar',
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(
+            esRestablecer
+              ? { token, nuevaPassword }
+              : { username: usuario.trim() }
+          )
+        }
+      );
+
+      const texto = await response.text();
+      if (!response.ok) {
+        setError(texto || 'No se pudo completar la solicitud.');
+        return;
+      }
+
+      setMensaje(
+        esRestablecer
+          ? 'Contraseña actualizada. Ya podés iniciar sesión.'
+          : 'Solicitud procesada. En esta demostración, el enlace aparece en la terminal de Spring Boot si el usuario existe.'
+      );
+    } catch {
+      setError('No se pudo conectar con Spring Boot.');
+    } finally {
+      setCargando(false);
+    }
+  }
+
+  return (
+    <div className="login-container">
+      <img src="/logo.png" alt="Logo PGA" className="logo-ga" />
+      <h1>{esRestablecer ? 'Nueva contraseña' : 'Recuperar contraseña'}</h1>
+      <p>
+        {esRestablecer
+          ? 'Ingresá una contraseña nueva para tu cuenta.'
+          : 'Ingresá tu usuario para solicitar un enlace de recuperación.'}
+      </p>
+
+      <form onSubmit={enviar}>
+        {esRestablecer ? (
+          <>
+            <label htmlFor="nuevaPassword">Nueva contraseña</label>
+            <input
+              id="nuevaPassword"
+              type="password"
+              autoComplete="new-password"
+              minLength={8}
+              value={nuevaPassword}
+              onChange={(e) => setNuevaPassword(e.target.value)}
+              required
+            />
+            <label htmlFor="confirmarPassword">Confirmar contraseña</label>
+            <input
+              id="confirmarPassword"
+              type="password"
+              autoComplete="new-password"
+              minLength={8}
+              value={confirmarPassword}
+              onChange={(e) => setConfirmarPassword(e.target.value)}
+              required
+            />
+          </>
+        ) : (
+          <>
+            <label htmlFor="usuarioRecuperacion">Usuario</label>
+            <input
+              id="usuarioRecuperacion"
+              type="text"
+              autoComplete="username"
+              value={usuario}
+              onChange={(e) => setUsuario(e.target.value)}
+              required
+            />
+          </>
+        )}
+
+        {error && <p role="alert" style={{ color: '#a32626' }}>{error}</p>}
+        {mensaje && <p role="status">{mensaje}</p>}
+
+        <button type="submit" className="btn-primario" disabled={cargando}>
+          {cargando
+            ? 'Procesando...'
+            : esRestablecer ? 'Guardar contraseña' : 'Solicitar enlace'}
+        </button>
+      </form>
+
+      <Link to="/login">Volver al inicio de sesión</Link>
     </div>
   );
 }
@@ -444,6 +570,16 @@ function App() {
         <Route
           path="/login"
           element={<Login />}
+        />
+
+        <Route
+          path="/recuperar"
+          element={<RecuperacionPassword />}
+        />
+
+        <Route
+          path="/restablecer"
+          element={<RecuperacionPassword />}
         />
 
         <Route
